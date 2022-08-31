@@ -10,18 +10,41 @@
     <p class="guesses"></p>
     <p class="lastResult"></p>
     <p class="lowOrHi"></p>
+    <br>
+    <label  for="guesses">Devinez un nombre</label>
+    <input id="guesses" type="text" class="guessField">
+    <input type="button" value="Devinez" class="guessSubmit">
     <script>
-        let number= Math.floor(Math.random() * 100) + 1;
-        let guesses = document.querySelector('.guesses');
-        let lastResult = document.querySelector('.lastResult');
-        let lowOrHi = document.querySelector('.lowOrHi');
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
 
-        let guessSubmit = document.querySelector('.guessSubmit');
-        let guessField = document.querySelector('.guessField');
+    let guesses = document.querySelector('.guesses');
+    let lastResult = document.querySelector('.lastResult');
+    let lowOrHi = document.querySelector('.lowOrHi');
 
-        let guessCount = 1;
-        let resetButton;
-        alert(number);
+    let guessSubmit = document.querySelector('.guessSubmit');
+    let guessField = document.querySelector('.guessField');
+
+    let guessCount = 1;
+    let resetButton;
+
+        function numbers(){
+            let userGuess = guessField.value;
+            if(guessCount === 1){
+                guesses.textContent = 'Propositions précédentes....: ';
+            }
+            guesses.textContent += userGuess + '  ';
+            if(userGuess === number){
+                lastResult.textContent ='Bravo';
+                lastResult.style.backgroundColor = 'green';
+                lowOrHi.textContent = ' ';
+                setGameOver();
+            }
+
+        }
+        function setGameOver() {
+            
+        }
+        guessSubmit.addEventListener('click',numbers);
     </script>
 </body>
 </html>
