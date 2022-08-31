@@ -11,10 +11,8 @@
     <p class="lastResult"></p>
     <p class="lowOrHi"></p>
     
-    <br>
-    <label  for="guesses">Devinez un nombre</label>
-    <input id="guesses" type="text" class="guessField">
-    <input type="button" value="Devinez" class="guessSubmit">
+    <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
+    <input type="submit" value="Submit guess" class="guessSubmit">    
     <script>
     let randomNumber = Math.floor(Math.random() * 100) + 1;
 
